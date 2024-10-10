@@ -119,6 +119,7 @@
         android:backgroundTint="#142188"
         android:onClick="calcular"
         android:text="Calcular"
+        android:textColor="#FFFFFF"
         android:textColorLink="#FF0000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
