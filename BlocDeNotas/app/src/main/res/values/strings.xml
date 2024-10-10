@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BlocDeNotas</string>
+    <string name="boton_guardar">Guardar</string>
+</resources>
