@@ -1,0 +1,18 @@
+Tener al menos cinco Activity's con navegación entre ellas.
+Incluir EditText para permitir la entrada de datos del usuario.
+Guardar los datos introducidos por el usuario de manera persistente utilizando SharedPreferences o ficheros internos (.txt).
+Personalizar los recursos de diseño (colores, strings.xml, imágenes) para que la aplicación tenga una estética coherente.
+Implementar validaciones en los campos de texto.
+
+Entrega: Hasta el 24 de octubre para entregar el proyecto. La entrega será el código fuente del
+proyecto (utilizando File > Export correctamente).
+El día de la entrega, se deberá exponer el proyecto en un máximo de 5 minutos, explicando las funcionalidades principales y cómo implementó los requisitos. I
+
+Criterio Puntuación Máxima
+
+Funcionalidad general 30
+Persistencia de Datos 15
+Interfaz de Usuario (UI/UX) 15
+Originalidad y creatividad 20
+Validaciones y Manejo de Errores 10
+Exposición oral 10

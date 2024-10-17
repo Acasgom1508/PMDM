@@ -9,8 +9,8 @@
 
     <EditText
         android:id="@+id/nuevoHabito"
-        android:layout_width="306dp"
-        android:layout_height="51dp"
+        android:layout_width="229dp"
+        android:layout_height="49dp"
         android:layout_marginStart="16dp"
         android:ems="10"
         android:hint="@string/HintPlainText"
@@ -22,8 +22,8 @@
 
     <ListView
         android:id="@+id/listaHabitos"
-        android:layout_width="414dp"
-        android:layout_height="711dp"
+        android:layout_width="374dp"
+        android:layout_height="612dp"
         android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +34,7 @@
 
     <Button
         android:id="@+id/boton_edit"
-        android:layout_width="123dp"
+        android:layout_width="wrap_content"
         android:layout_height="69dp"
         android:layout_marginBottom="68dp"
         android:backgroundTint="#ED6700"
@@ -51,7 +51,7 @@
 
     <Button
         android:id="@+id/boton_elim"
-        android:layout_width="123dp"
+        android:layout_width="wrap_content"
         android:layout_height="69dp"
         android:layout_marginEnd="52dp"
         android:backgroundTint="#CA1010"
@@ -75,7 +75,9 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/nuevoHabito"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.719"
         app:layout_constraintStart_toEndOf="@+id/nuevoHabito"
         app:layout_constraintTop_toTopOf="@+id/nuevoHabito"
+        app:layout_constraintVertical_bias="0.0"
         app:rippleColor="#00B2E8" />
 </androidx.constraintlayout.widget.ConstraintLayout>
