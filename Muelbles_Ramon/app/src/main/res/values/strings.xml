@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Muelbles_Ramon</string>
+    <string name="bienvenida">Bienvenido a</string>
+    <string name="nombreEmpresa">Muebles Ramon</string>
+    <string name="iniciosesion"><u>Inicio de sesión</u></string>
+    <string name="usuario">Usuario</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="iniciar_bot">Inciar sesión</string>
 </resources>
