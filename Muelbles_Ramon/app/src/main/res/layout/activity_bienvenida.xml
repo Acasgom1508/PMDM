@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/pantallabienvenida"
-    tools:context=".MainActivity">
+    tools:context=".Bienvenida">
 
     <TextView
         android:id="@+id/textView3"
@@ -63,10 +63,11 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/iniciar_sesion_bot"
         android:layout_width="272dp"
         android:layout_height="62dp"
         android:backgroundTint="#1C5D99"
+        android:onClick="iniciarSesion"
         android:text="@string/iniciar_bot"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
