@@ -7,4 +7,43 @@
     android:layout_height="match_parent"
     tools:context=".Carrito">
 
+    <ImageButton
+        android:id="@+id/atras_bot3"
+        android:layout_width="77dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="32dp"
+        android:backgroundTint="#00FFFFFF"
+        android:onClick="irAtras"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.062"
+        app:srcCompat="@mipmap/atras" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="156dp"
+        android:fontFamily="@font/hind_medium"
+        android:text="@string/carrito"
+        android:textColor="#213140"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/atras_bot3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.757"
+        app:layout_constraintStart_toEndOf="@+id/atras_bot2" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.124"
+        app:srcCompat="@mipmap/linea" />
 </androidx.constraintlayout.widget.ConstraintLayout>

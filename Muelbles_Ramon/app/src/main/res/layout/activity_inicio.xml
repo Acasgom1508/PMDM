@@ -17,14 +17,14 @@
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="@+id/perfil_boton"
         app:layout_constraintEnd_toStartOf="@+id/carrito_boton"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toEndOf="@+id/perfil_boton" />
 
     <ImageButton
         android:id="@+id/carrito_boton"
-        android:layout_width="79dp"
-        android:layout_height="73dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="74dp"
+        android:layout_height="66dp"
+        android:layout_marginEnd="16dp"
         android:backgroundTint="#00FFFFFF"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="@+id/textView4"
@@ -34,8 +34,8 @@
     <ImageButton
         android:id="@+id/perfil_boton"
         android:layout_width="77dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="32dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
         android:backgroundTint="#00FFFFFF"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"

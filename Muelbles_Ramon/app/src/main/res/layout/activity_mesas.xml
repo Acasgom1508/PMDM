@@ -7,6 +7,20 @@
     android:layout_height="match_parent"
     tools:context=".Mesas">
 
+    <ImageButton
+        android:id="@+id/atras_bot4"
+        android:layout_width="54dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="28dp"
+        android:backgroundTint="#00FFFFFF"
+        android:onClick="irAtras"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.069"
+        app:srcCompat="@mipmap/atras" />
+
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
@@ -15,26 +29,12 @@
         android:text="@string/mesas"
         android:textColor="#213140"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="@+id/atras_bot4"
+        app:layout_constraintBottom_toTopOf="@+id/imageView6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintHorizontal_bias="0.324"
         app:layout_constraintStart_toEndOf="@+id/atras_bot4"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
-
-    <ImageButton
-        android:id="@+id/atras_bot4"
-        android:layout_width="77dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="32dp"
-        android:backgroundTint="#00FFFFFF"
-        android:onClick="irAtras"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062"
-        app:srcCompat="@mipmap/atras" />
 
     <ImageView
         android:id="@+id/imageView6"
