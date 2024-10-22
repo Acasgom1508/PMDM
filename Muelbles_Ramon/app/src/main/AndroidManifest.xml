@@ -13,6 +13,15 @@
         android:theme="@style/Theme.Muelbles_Ramon"
         tools:targetApi="31">
         <activity
+            android:name=".Sillas"
+            android:exported="false" />
+        <activity
+            android:name=".Mesas"
+            android:exported="false" />
+        <activity
+            android:name=".Muebles"
+            android:exported="false" />
+        <activity
             android:name=".inicio"
             android:exported="false" />
         <activity

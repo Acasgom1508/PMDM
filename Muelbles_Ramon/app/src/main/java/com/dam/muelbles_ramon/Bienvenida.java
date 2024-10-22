@@ -18,7 +18,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class Bienvenida extends AppCompatActivity {
 
     private EditText usuario_pt, contra_pt;
-    private SharedPreferences usu_pref,cont_pref;
+    private SharedPreferences usu_pref, cont_pref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,17 +46,31 @@ public class Bienvenida extends AppCompatActivity {
         usu_pref = getSharedPreferences("usuarios", Context.MODE_PRIVATE);
         cont_pref = getSharedPreferences("contrasena", Context.MODE_PRIVATE);
 
-        SharedPreferences.Editor editor_usu = usu_pref.edit();
-        SharedPreferences.Editor editor_cont = cont_pref.edit();
+        if (usuario_pt.getText().toString().isEmpty() || contra_pt.getText().toString().isEmpty()) {
+            Toast.makeText(this, "Rellena todos los campos", Toast.LENGTH_SHORT).show();
+            return;
+        } else {
+            if (usuario_pt.getText().toString().equals("Jefe Ramon")) {
+                if (contra_pt.getText().toString().equals("1234")) {
+                    SharedPreferences.Editor editor_usu = usu_pref.edit();
+                    SharedPreferences.Editor editor_cont = cont_pref.edit();
 
-        editor_usu.putString("usuario", usuario_pt.getText().toString());
-        editor_cont.putString("contrasena", usuario_pt.getText().toString());
+                    editor_usu.putString("usuario", usuario_pt.getText().toString());
+                    editor_cont.putString("contrasena", contra_pt.getText().toString());
 
-        editor_usu.apply();
-        editor_cont.apply();
+                    editor_usu.apply();
+                    editor_cont.apply();
 
-        Toast.makeText(this, "Bienvenido", Toast.LENGTH_SHORT).show();
-        Intent nuevaPantalla = new Intent(this, inicio.class);
-        startActivity(nuevaPantalla);
+                    Toast.makeText(this, "Bienvenido", Toast.LENGTH_SHORT).show();
+                    Intent pantallaInicio = new Intent(this, inicio.class);
+                    startActivity(pantallaInicio);
+                }else{
+                    Toast.makeText(this, "Contraseña incorrecta para Jefe Ramon", Toast.LENGTH_SHORT).show();
+                }
+            }else{
+                Toast.makeText(this, "No eres el Jefe Ramon", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
+
 }

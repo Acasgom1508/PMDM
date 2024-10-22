@@ -13,14 +13,12 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/hind_medium"
         android:text="@string/inicio"
-        android:textColor="#1F405E"
+        android:textColor="#213140"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/perfil_boton"
         app:layout_constraintEnd_toStartOf="@+id/carrito_boton"
         app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toEndOf="@+id/perfil_boton"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.069" />
+        app:layout_constraintStart_toEndOf="@+id/perfil_boton" />
 
     <ImageButton
         android:id="@+id/carrito_boton"
@@ -29,10 +27,8 @@
         android:layout_marginEnd="32dp"
         android:backgroundTint="#00FFFFFF"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.057"
         app:srcCompat="@mipmap/carrito" />
 
     <ImageButton
@@ -57,7 +53,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13"
+        app:layout_constraintVertical_bias="0.124"
         app:srcCompat="@mipmap/linea" />
 
     <ImageButton
@@ -66,6 +62,7 @@
         android:layout_height="339dp"
         android:layout_marginTop="12dp"
         android:backgroundTint="#00FFFFFF"
+        android:onClick="irMesas"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,6 +75,7 @@
         android:layout_height="328dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#00FFFFFF"
+        android:onClick="irSillas"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
