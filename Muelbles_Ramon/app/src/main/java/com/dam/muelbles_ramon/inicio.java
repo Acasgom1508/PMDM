@@ -34,5 +34,16 @@ public class inicio extends AppCompatActivity {
         startActivity(pantallaSillas);
     }
 
+    public void irCuenta(View view) {
+        Intent pantallaCuenta = new Intent(this, Cuenta.class);
+        startActivity(pantallaCuenta);
+    }
+
+    public void irCarrito(View view) {
+        Intent pantallaCarrito = new Intent(this, Carrito.class);
+        startActivity(pantallaCarrito);
+    }
+
+
 
 }

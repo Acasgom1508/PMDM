@@ -69,8 +69,9 @@
         android:layout_marginEnd="32dp"
         android:ems="10"
         android:inputType="phone"
+        app:layout_constraintBottom_toBottomOf="@+id/textView12"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="649dp" />
+        app:layout_constraintTop_toTopOf="@+id/textView12" />
 
     <TextView
         android:id="@+id/textView9"
@@ -78,7 +79,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:text="@string/nombre"
+        android:textColor="#39576D"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -90,11 +93,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:text="@string/email"
+        android:textColor="#39576D"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.669" />
+        app:layout_constraintVertical_bias="0.662" />
 
     <EditText
         android:id="@+id/dir_et"
@@ -103,10 +108,11 @@
         android:layout_marginEnd="28dp"
         android:ems="10"
         android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@+id/textView15"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView15"
-        tools:layout_editor_absoluteY="723dp" />
+        app:layout_constraintTop_toTopOf="@+id/textView15" />
 
     <TextView
         android:id="@+id/textView12"
@@ -114,11 +120,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:text="@string/telefono"
+        android:textColor="#39576D"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tlf_et"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tlf_et"
-        app:layout_constraintVertical_bias="0.538" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.742" />
 
     <EditText
         android:id="@+id/email_et"
@@ -139,11 +147,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:text="@string/direccion"
+        android:textColor="#39576D"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/dir_et"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/dir_et"
-        app:layout_constraintVertical_bias="0.545" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.814" />
 
     <EditText
         android:id="@+id/nombre_et"
