@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Muelbles_Ramon"
         tools:targetApi="31">
         <activity
+            android:name=".Carrito"
+            android:exported="false" />
+        <activity
+            android:name=".Cuenta"
+            android:exported="false" />
+        <activity
             android:name=".Sillas"
             android:exported="false" />
         <activity
