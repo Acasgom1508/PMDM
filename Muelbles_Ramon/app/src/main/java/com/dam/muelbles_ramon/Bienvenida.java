@@ -19,6 +19,8 @@ public class Bienvenida extends AppCompatActivity {
 
     private EditText usuario_pt, contra_pt;
     private SharedPreferences usu_pref, cont_pref;
+    String usuario;
+    String contrasena;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +39,14 @@ public class Bienvenida extends AppCompatActivity {
         usu_pref = getSharedPreferences("usuarios", Context.MODE_PRIVATE);
         cont_pref = getSharedPreferences("contrasena", Context.MODE_PRIVATE);
 
-        usuario_pt.setText(usu_pref.getString("usuario", ""));
-        contra_pt.setText(cont_pref.getString("contrasena", ""));
+        // Recuperar el nombre de usuario desde SharedPreferences (guardado en la activity Cuenta)
+        SharedPreferences sharedPreferences = getSharedPreferences("DatosUsuario", Context.MODE_PRIVATE);
+        usuario = sharedPreferences.getString("nombreUsuario", "Jefe Ramon"); // Valor por defecto si no existe
+        contrasena = sharedPreferences.getString("contrasena", "Jefe Ramon"); // Valor por defecto si no existe
 
+        // Mostrar el nombre de usuario en el campo de texto
+        usuario_pt.setText(usu_pref.getString("usuario", usuario));
+        contra_pt.setText(cont_pref.getString("contrasena", contrasena));
     }
 
     public void iniciarSesion(View view) {
@@ -50,7 +57,7 @@ public class Bienvenida extends AppCompatActivity {
             Toast.makeText(this, "Rellena todos los campos", Toast.LENGTH_SHORT).show();
             return;
         } else {
-            if (usuario_pt.getText().toString().equals("Jefe Ramon")) {
+            if (usuario_pt.getText().toString().equals(usuario)) {
                 if (contra_pt.getText().toString().equals("1234")) {
                     SharedPreferences.Editor editor_usu = usu_pref.edit();
                     SharedPreferences.Editor editor_cont = cont_pref.edit();
@@ -64,11 +71,11 @@ public class Bienvenida extends AppCompatActivity {
                     Toast.makeText(this, "Bienvenido", Toast.LENGTH_SHORT).show();
                     Intent pantallaInicio = new Intent(this, inicio.class);
                     startActivity(pantallaInicio);
-                }else{
-                    Toast.makeText(this, "Contraseña incorrecta para Jefe Ramon", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "Contraseña incorrecta para "+usuario+"pista("+contrasena+")", Toast.LENGTH_SHORT).show();
                 }
-            }else{
-                Toast.makeText(this, "No eres el Jefe Ramon", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "No eres "+usuario, Toast.LENGTH_SHORT).show();
             }
         }
     }
