@@ -14,11 +14,11 @@
         android:layout_marginStart="28dp"
         android:backgroundTint="#00FFFFFF"
         android:onClick="irAtras"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.069"
+        app:layout_constraintVertical_bias="0.084"
         app:srcCompat="@mipmap/atras" />
 
     <TextView
@@ -29,12 +29,12 @@
         android:text="@string/mesas"
         android:textColor="#213140"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView6"
+        app:layout_constraintBottom_toBottomOf="@+id/atras_bot4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.324"
         app:layout_constraintStart_toEndOf="@+id/atras_bot4"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/atras_bot4"
+        app:layout_constraintVertical_bias="0.41000003" />
 
     <ImageView
         android:id="@+id/imageView6"

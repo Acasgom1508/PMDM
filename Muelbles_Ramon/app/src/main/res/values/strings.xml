@@ -7,10 +7,10 @@
     <string name="contraseña">Contraseña:</string>
     <string name="iniciar_bot">Inciar sesión</string>
     <string name="inicio"><u>Inicio</u></string>
-    <string name="mesas">Mesas</string>
-    <string name="sillas">Sillas</string>
-    <string name="carrito">Carrito</string>
-    <string name="cuenta">Cuenta</string>
+    <string name="mesas"><u>Mesas</u></string>
+    <string name="sillas"><u>Sillas</u></string>
+    <string name="carrito"><u>Carrito</u></string>
+    <string name="cuenta"><u>Cuenta</u></string>
     <string name="email">Email:</string>
     <string name="direccion">Dirección:</string>
     <string name="guardar">Guardar</string>

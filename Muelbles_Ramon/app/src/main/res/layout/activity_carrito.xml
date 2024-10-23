@@ -11,14 +11,14 @@
         android:id="@+id/atras_bot3"
         android:layout_width="54dp"
         android:layout_height="47dp"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="28dp"
         android:backgroundTint="#00FFFFFF"
         android:onClick="irAtras"
-        android:scaleType="fitXY"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.069"
+        app:layout_constraintVertical_bias="0.082"
         app:srcCompat="@mipmap/atras" />
 
     <TextView
@@ -32,8 +32,9 @@
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="@+id/atras_bot3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.757"
-        app:layout_constraintStart_toEndOf="@+id/atras_bot2" />
+        app:layout_constraintStart_toEndOf="@+id/atras_bot2"
+        app:layout_constraintTop_toTopOf="@+id/atras_bot3"
+        app:layout_constraintVertical_bias="0.58000004" />
 
     <ImageView
         android:id="@+id/imageView7"

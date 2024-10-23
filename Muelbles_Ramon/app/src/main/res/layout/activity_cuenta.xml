@@ -7,6 +7,20 @@
     android:layout_height="match_parent"
     tools:context=".Cuenta">
 
+    <ImageButton
+        android:id="@+id/atras_bot5"
+        android:layout_width="54dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="28dp"
+        android:backgroundTint="#00FFFFFF"
+        android:onClick="irAtras"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.084"
+        app:srcCompat="@mipmap/atras" />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
@@ -19,35 +33,19 @@
         app:layout_constraintVertical_bias="0.124"
         app:srcCompat="@mipmap/linea" />
 
-    <ImageButton
-        android:id="@+id/atras_bot2"
-        android:layout_width="54dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="28dp"
-        android:backgroundTint="#00FFFFFF"
-        android:onClick="irAtras"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.069"
-        app:srcCompat="@mipmap/atras" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="144dp"
+        android:layout_marginEnd="152dp"
         android:fontFamily="@font/hind_medium"
         android:text="@string/cuenta"
         android:textColor="#213140"
         android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@+id/atras_bot5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.902"
-        app:layout_constraintStart_toEndOf="@+id/atras_bot2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/atras_bot5"
+        app:layout_constraintVertical_bias="0.39" />
 
     <ImageView
         android:id="@+id/imageView9"
