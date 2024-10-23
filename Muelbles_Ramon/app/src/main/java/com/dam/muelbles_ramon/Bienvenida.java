@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -23,6 +25,7 @@ public class Bienvenida extends AppCompatActivity {
     String usuario;
     String contrasena;
     boolean esVisible = false;
+    WebView video;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,12 @@ public class Bienvenida extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        video = findViewById(R.id.video);
+        video.setWebViewClient(new WebViewClient());
+        String videoId = "-ZSnAyKgMHU";
+        video.loadUrl("https://www.youtube.com/embed/" + videoId + "?autoplay=1");
+        video.getSettings().setJavaScriptEnabled(true);
 
         usuario_pt = findViewById(R.id.usuario_pt);
         contra_pt = findViewById(R.id.contra_pt);
