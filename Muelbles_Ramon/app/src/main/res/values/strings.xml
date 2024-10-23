@@ -14,4 +14,9 @@
     <string name="email">Email:</string>
     <string name="direccion">Dirección:</string>
     <string name="guardar">Guardar</string>
+    <string name="informacion">Si es la primera vez que inicia sesión, debe rellenar la información personal</string>
+    <string name="total">Total:</string>
+    <string name="cero">0€</string>
+    <string name="txt_carrito">Al pulsar en el siguiente botón se eliminarán del carrito y se enviarán a la dirección especificada</string>
+    <string name="comprar">Comprar</string>
 </resources>

@@ -42,10 +42,10 @@ public class Cuenta extends AppCompatActivity {
 
         SharedPreferences datosUsuario = getSharedPreferences("DatosUsuario", MODE_PRIVATE);
 
-        String nombreUsuario = datosUsuario.getString("nombreUsuario", "");  // Si es nulo, retorna ""
-        String email = datosUsuario.getString("email", "");
-        String direccion = datosUsuario.getString("direccion", "");
-        String contrasena = datosUsuario.getString("contrasena", "");
+        String nombreUsuario = datosUsuario.getString("nombreUsuario", "Jefe Ramon");  // Si es nulo, retorna ""
+        String email = datosUsuario.getString("email", "ramon@gmail.com");
+        String direccion = datosUsuario.getString("direccion", "casa ramon 3");
+        String contrasena = datosUsuario.getString("contrasena", "12345");
 
         nombre_et.setText(nombreUsuario);
         email_et.setText(email);

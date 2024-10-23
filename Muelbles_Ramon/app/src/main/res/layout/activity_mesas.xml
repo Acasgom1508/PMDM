@@ -47,4 +47,81 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.124"
         app:srcCompat="@mipmap/linea" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingBottom="180dp">
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="wrap_content"
+                android:layout_height="420dp"
+                android:layout_marginTop="25dp"
+                android:scaleType="fitCenter"
+                android:textAlignment="center"
+                app:srcCompat="@mipmap/mesa1" />
+
+            <Button
+                android:layout_width="367dp"
+                android:layout_height="60dp"
+                android:backgroundTint="#1C5C98"
+                android:fontFamily="@font/hind_semibold"
+                android:paddingTop="-1dp"
+                android:text="Añadir al carrito"
+                android:textAlignment="center"
+                android:textSize="34sp" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="wrap_content"
+                android:layout_height="420dp"
+                android:layout_marginTop="25dp"
+                android:scaleType="fitCenter"
+                android:textAlignment="center"
+                app:srcCompat="@mipmap/mesa2" />
+
+            <Button
+                android:layout_width="367dp"
+                android:layout_height="60dp"
+                android:backgroundTint="#1C5C98"
+                android:fontFamily="@font/hind_semibold"
+                android:paddingTop="-1dp"
+                android:text="Añadir al carrito"
+                android:textAlignment="center"
+                android:textSize="34sp" />
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="wrap_content"
+                android:layout_height="420dp"
+                android:layout_marginTop="25dp"
+                android:scaleType="fitCenter"
+                android:textAlignment="center"
+                app:srcCompat="@mipmap/mesa3" />
+
+            <Button
+                android:layout_width="367dp"
+                android:layout_height="60dp"
+                android:backgroundTint="#1C5C98"
+                android:fontFamily="@font/hind_semibold"
+                android:paddingTop="-1dp"
+                android:text="Añadir al carrito"
+                android:textAlignment="center"
+                android:textSize="34sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
