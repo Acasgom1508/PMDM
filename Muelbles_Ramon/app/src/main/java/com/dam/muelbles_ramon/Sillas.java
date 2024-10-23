@@ -57,10 +57,9 @@ public class Sillas extends AppCompatActivity {
     }
 
     public void anadirACarritoSilla(String nombre, int precio) {
+        CarritoSingleton.getInstance().agregarProducto(nombre, precio);
         Toast.makeText(this, nombre + " añadida a la cesta", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, Carrito.class);
-        intent.putExtra("nombreMueble", nombre);
-        intent.putExtra("precioMueble", precio);
         startActivity(intent);
     }
 

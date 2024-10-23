@@ -1,6 +1,5 @@
 package com.dam.muelbles_ramon;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -14,15 +13,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import java.util.ArrayList;
-
 public class Carrito extends AppCompatActivity {
 
-    ArrayList<String> carrito = new ArrayList<>();
-    ArrayList<Integer> precios = new ArrayList<>();
     private ListView lista;
     private TextView totalTextView;
-    private int total = 0;
+    private ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,24 +31,19 @@ public class Carrito extends AppCompatActivity {
         });
 
         lista = findViewById(R.id.lista_carrito);
-        totalTextView = findViewById(R.id.total_txt); // Asegúrate de tener un TextView para mostrar el total
+        totalTextView = findViewById(R.id.total_txt);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, carrito);
+        adapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1,
+                CarritoSingleton.getInstance().getProductos());
         lista.setAdapter(adapter);
 
-        // Obtener los datos pasados de las activities Mesas o Sillas
-        Intent intent = getIntent();
-        if (intent != null && intent.hasExtra("nombreMueble") && intent.hasExtra("precioMueble")) {
-            String nombreMueble = intent.getStringExtra("nombreMueble");
-            int precioMueble = intent.getIntExtra("precioMueble", 0);
+        actualizarUI();
+    }
 
-            carrito.add(nombreMueble + ": " + precioMueble + "€");
-            precios.add(precioMueble);
-            total += precioMueble;
-
-            adapter.notifyDataSetChanged();
-            totalTextView.setText(total + "€");
-        }
+    private void actualizarUI() {
+        adapter.notifyDataSetChanged();
+        totalTextView.setText(CarritoSingleton.getInstance().getTotal() + "€");
     }
 
     public void irAtras(View view) {
@@ -61,14 +51,8 @@ public class Carrito extends AppCompatActivity {
     }
 
     public void comprar(View view) {
-        carrito.clear();
-        precios.clear();
-        total = 0;
-
-        ArrayAdapter adapter = (ArrayAdapter) lista.getAdapter();
-        adapter.notifyDataSetChanged();
-        totalTextView.setText(total + "€");
-
+        CarritoSingleton.getInstance().limpiarCarrito();
+        actualizarUI();
         Toast.makeText(this, "Compra realizada", Toast.LENGTH_SHORT).show();
     }
 }
