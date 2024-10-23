@@ -1,9 +1,11 @@
 package com.dam.muelbles_ramon;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -16,8 +18,11 @@ import java.util.ArrayList;
 
 public class Carrito extends AppCompatActivity {
 
-    ArrayList carrito = new ArrayList();
+    ArrayList<String> carrito = new ArrayList<>();
+    ArrayList<Integer> precios = new ArrayList<>();
     private ListView lista;
+    private TextView totalTextView;
+    private int total = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +36,24 @@ public class Carrito extends AppCompatActivity {
         });
 
         lista = findViewById(R.id.lista_carrito);
+        totalTextView = findViewById(R.id.total_txt); // Asegúrate de tener un TextView para mostrar el total
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, carrito);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, carrito);
         lista.setAdapter(adapter);
+
+        // Obtener los datos pasados de las activities Mesas o Sillas
+        Intent intent = getIntent();
+        if (intent != null && intent.hasExtra("nombreMueble") && intent.hasExtra("precioMueble")) {
+            String nombreMueble = intent.getStringExtra("nombreMueble");
+            int precioMueble = intent.getIntExtra("precioMueble", 0);
+
+            carrito.add(nombreMueble + ": " + precioMueble + "€");
+            precios.add(precioMueble);
+            total += precioMueble;
+
+            adapter.notifyDataSetChanged();
+            totalTextView.setText(total + "€");
+        }
     }
 
     public void irAtras(View view) {
@@ -42,10 +62,13 @@ public class Carrito extends AppCompatActivity {
 
     public void comprar(View view) {
         carrito.clear();
-        ArrayAdapter adapter = (ArrayAdapter) lista.getAdapter();  // Obténer el adaptador actual
-        adapter.notifyDataSetChanged();  // Notifica al adaptador que los datos han cambiado
+        precios.clear();
+        total = 0;
+
+        ArrayAdapter adapter = (ArrayAdapter) lista.getAdapter();
+        adapter.notifyDataSetChanged();
+        totalTextView.setText(total + "€");
+
         Toast.makeText(this, "Compra realizada", Toast.LENGTH_SHORT).show();
     }
-
-
 }

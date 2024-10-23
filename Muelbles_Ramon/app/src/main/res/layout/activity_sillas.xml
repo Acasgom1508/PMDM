@@ -75,6 +75,7 @@
                 app:srcCompat="@mipmap/silla1" />
 
             <Button
+                android:id="@+id/botSilla1"
                 android:layout_width="367dp"
                 android:layout_height="60dp"
                 android:backgroundTint="#1C5C98"
@@ -94,6 +95,7 @@
                 app:srcCompat="@mipmap/silla2" />
 
             <Button
+                android:id="@+id/botSilla2"
                 android:layout_width="367dp"
                 android:layout_height="60dp"
                 android:backgroundTint="#1C5C98"
@@ -113,6 +115,7 @@
                 app:srcCompat="@mipmap/silla3" />
 
             <Button
+                android:id="@+id/botSilla3"
                 android:layout_width="367dp"
                 android:layout_height="60dp"
                 android:backgroundTint="#1C5C98"

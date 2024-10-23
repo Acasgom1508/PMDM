@@ -22,7 +22,7 @@ public class Bienvenida extends AppCompatActivity {
     private SharedPreferences usu_pref, cont_pref;
     String usuario;
     String contrasena;
-    boolean esVisible = true;
+    boolean esVisible = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
