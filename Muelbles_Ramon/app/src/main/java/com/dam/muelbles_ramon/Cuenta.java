@@ -2,6 +2,7 @@ package com.dam.muelbles_ramon;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ public class Cuenta extends AppCompatActivity {
     private EditText email_et;
     private EditText dir_et;
     private EditText cntr_et;
+    boolean esVisible = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,4 +79,14 @@ public class Cuenta extends AppCompatActivity {
         Toast.makeText(this, "Cambios guardados", Toast.LENGTH_SHORT).show();
     }
 
+    public void ocultar(View view) {
+        if (esVisible) {
+            cntr_et.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            esVisible = false;
+        } else {
+            cntr_et.setInputType(InputType.TYPE_CLASS_TEXT);
+            esVisible = true;
+        }
+
+    }
 }

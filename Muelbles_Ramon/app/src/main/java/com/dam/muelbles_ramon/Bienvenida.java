@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +22,7 @@ public class Bienvenida extends AppCompatActivity {
     private SharedPreferences usu_pref, cont_pref;
     String usuario;
     String contrasena;
+    boolean esVisible = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +60,7 @@ public class Bienvenida extends AppCompatActivity {
             return;
         } else {
             if (usuario_pt.getText().toString().equals(usuario)) {
-                if (contra_pt.getText().toString().equals("1234")) {
+                if (contra_pt.getText().toString().equals(contrasena)) {
                     SharedPreferences.Editor editor_usu = usu_pref.edit();
                     SharedPreferences.Editor editor_cont = cont_pref.edit();
 
@@ -72,12 +74,23 @@ public class Bienvenida extends AppCompatActivity {
                     Intent pantallaInicio = new Intent(this, inicio.class);
                     startActivity(pantallaInicio);
                 } else {
-                    Toast.makeText(this, "Contraseña incorrecta para "+usuario+"pista("+contrasena+")", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Contraseña incorrecta para "+usuario+". Pista("+contrasena+")", Toast.LENGTH_SHORT).show();
                 }
             } else {
                 Toast.makeText(this, "No eres "+usuario, Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    public void ocultar(View view) {
+        if (esVisible) {
+            contra_pt.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            esVisible = false;
+        } else {
+            contra_pt.setInputType(InputType.TYPE_CLASS_TEXT);
+            esVisible = true;
+        }
+
     }
 
 }

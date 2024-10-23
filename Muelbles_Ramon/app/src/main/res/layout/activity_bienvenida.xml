@@ -8,6 +8,36 @@
     android:background="@mipmap/pantallabienvenida"
     tools:context=".Bienvenida">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="318dp"
+        android:layout_height="343dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.794"
+        app:srcCompat="@mipmap/cuadrado" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="45dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="72dp"
+        android:backgroundTint="#00FFFFFF"
+        android:onClick="ocultar"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/contra_pt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toEndOf="@+id/cntr_et"
+        app:layout_constraintTop_toTopOf="@+id/contra_pt"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@mipmap/ojo" />
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
@@ -34,19 +64,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="318dp"
-        android:layout_height="343dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.794"
-        app:srcCompat="@mipmap/cuadrado" />
 
     <EditText
         android:id="@+id/usuario_pt"
@@ -92,16 +109,16 @@
 
     <EditText
         android:id="@+id/contra_pt"
-        android:layout_width="253dp"
-        android:layout_height="53dp"
-        android:layout_marginBottom="208dp"
+        android:layout_width="209dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="204dp"
         android:ems="10"
         android:hint="@string/contraseña"
         android:inputType="textPassword"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintHorizontal_bias="0.396"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
