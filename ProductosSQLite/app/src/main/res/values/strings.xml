@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">ProductosSQLite</string>
+    <string name="titulo"><u>BASE DE DATOS</u></string>
     <string name="pedir_codigo">Código del producto</string>
     <string name="pedir_descripcion">Descripción del producto</string>
     <string name="pedir_precio">Precio del producto</string>
-    <string name="registar_bot">REGISTRAR PRODUCTO</string>
-    <string name="modificar_bot">MODIFICAR PRODUCTO</string>
-    <string name="eliminar_bot">ELIMINAR PRODUCTO</string>
-    <string name="buscar_bot">BUSCAR PRODUCTO</string>
+    <string name="registar_bot">🗒️REGISTRAR PRODUCTO</string>
+    <string name="modificar_bot">✏️MODIFICAR PRODUCTO</string>
+    <string name="eliminar_bot">❌ELIMINAR PRODUCTO</string>
+    <string name="buscar_bot">🔍BUSCAR PRODUCTO</string>
 
 </resources>
