@@ -126,4 +126,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/boton_sigView"
+        android:layout_width="280dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#00838F"
+        android:onClick="irLista"
+        android:text="@string/nuevaActivity_bot"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/eliminar_bot"
+        app:layout_constraintStart_toStartOf="@+id/eliminar_bot"
+        app:layout_constraintTop_toBottomOf="@+id/eliminar_bot" />
 </androidx.constraintlayout.widget.ConstraintLayout>

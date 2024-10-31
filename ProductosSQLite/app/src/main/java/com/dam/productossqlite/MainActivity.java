@@ -1,6 +1,7 @@
 package com.dam.productossqlite;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -102,11 +103,11 @@ public class MainActivity extends AppCompatActivity {
             codigo_pt.setText("");
             desc_pt.setText("");
             precio_pt.setText("");
-            if (cantidad == 1){
+            if (cantidad == 1) {
                 Toast.makeText(this, "Producto eliminado", Toast.LENGTH_SHORT).show();
-            }else if (cantidad > 1){
-                Toast.makeText(this, cantidad+" productos eliminados", Toast.LENGTH_SHORT).show();
-            }else{
+            } else if (cantidad > 1) {
+                Toast.makeText(this, cantidad + " productos eliminados", Toast.LENGTH_SHORT).show();
+            } else {
                 Toast.makeText(this, "No existe un producto con ese código", Toast.LENGTH_SHORT).show();
             }
         }
@@ -114,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         bd.close();
     }
 
-    public void modificar (View view){
+    public void modificar(View view) {
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
         SQLiteDatabase bd = admin.getWritableDatabase();
 
@@ -122,19 +123,25 @@ public class MainActivity extends AppCompatActivity {
         String descripcion = desc_pt.getText().toString();
         String precio = precio_pt.getText().toString();
 
-        if (!codigo.isEmpty() && !descripcion.isEmpty() && !precio.isEmpty()){
+        if (!codigo.isEmpty() && !descripcion.isEmpty() && !precio.isEmpty()) {
             ContentValues registro = new ContentValues();
             registro.put("codigo", codigo);
             registro.put("descripcion", descripcion);
             registro.put("precio", precio);
             int cantidad = bd.update("articulos", registro, "codigo=" + codigo, null);
-            if (cantidad == 1){
+            if (cantidad == 1) {
                 Toast.makeText(this, "Producto modificado", Toast.LENGTH_SHORT).show();
-            }else Toast.makeText(this, "No existe un producto con ese código", Toast.LENGTH_SHORT).show();
-        }else{
+            } else
+                Toast.makeText(this, "No existe un producto con ese código", Toast.LENGTH_SHORT).show();
+        } else {
             Toast.makeText(this, "Debes rellenar todos los datos", Toast.LENGTH_SHORT).show();
         }
 
         bd.close();
+    }
+
+    public void irLista(View view) {
+        Intent pantallaLista = new Intent(this, ListaBD.class);
+        startActivity(pantallaLista);
     }
 }

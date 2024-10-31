@@ -8,5 +8,9 @@
     <string name="modificar_bot">MODIFICAR PRODUCTO</string>
     <string name="eliminar_bot">ELIMINAR PRODUCTO</string>
     <string name="buscar_bot">🔍</string>
+    <string name="nuevaActivity_bot">VER TODOS LOS PRODUCTOS</string>
+
+    <string name="tituloActivityLista"><u>Lista de productos</u></string>
+    <string name="volver">Atrás</string>
 
 </resources>
