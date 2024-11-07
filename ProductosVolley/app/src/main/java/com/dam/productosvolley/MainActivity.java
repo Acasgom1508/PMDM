@@ -108,4 +108,62 @@ public class MainActivity extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(jar);
     }
+
+    public void eliminarProducto(View view) {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://10.0.2.2/registrar_producto/eliminar_producto.php?codigo=" + codigo_et.getText().toString(), new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(getApplicationContext(), "Operación exitosa", Toast.LENGTH_SHORT).show();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> parametros = new HashMap<String, String>();
+                //Estas son las $variables del microservicio
+                parametros.put("codigo", codigo_et.getText().toString());
+                parametros.put("producto", producto_et.getText().toString());
+                parametros.put("precio", precio_et.getText().toString());
+                parametros.put("fabricante", fab_et.getText().toString());
+                return parametros;
+            }
+        };
+
+        requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+
+    }
+
+    public void editarProducto(View view) {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://10.0.2.2/registrar_producto/editar_producto.php?codigo=" + codigo_et.getText().toString() + "?producto=" + producto_et.getText().toString() + "?precio=" + precio_et.getText().toString() + "?fabricante=" + fab_et.getText().toString(), new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(getApplicationContext(), "Operación exitosa", Toast.LENGTH_SHORT).show();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> parametros = new HashMap<String, String>();
+                //Estas son las $variables del microservicio
+                parametros.put("codigo", codigo_et.getText().toString());
+                parametros.put("producto", producto_et.getText().toString());
+                parametros.put("precio", precio_et.getText().toString());
+                parametros.put("fabricante", fab_et.getText().toString());
+                return parametros;
+            }
+        };
+
+        requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+
+    }
 }
