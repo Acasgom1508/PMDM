@@ -81,30 +81,31 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void buscarProducto(View view) {
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest("http://10.0.2.2/registrar_producto/buscar_producto.php?codigo=" + codigo_et.getText().toString(), new Response.Listener<JSONArray>() {
+    public void buscarProducto(View v) {
+        JsonArrayRequest jar = new JsonArrayRequest("http://10.0.2.2/registrar_producto/buscar_producto.php?codigo=" + codigo_et.getText().toString(), new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-                JSONObject jsonObject = null;
+                JSONObject job = null;
                 for (int i = 0; i < response.length(); i++) {
                     try {
-                        jsonObject = response.getJSONObject(i);
-                        codigo_et.setText(jsonObject.getString("codigo"));
-                        producto_et.setText(jsonObject.getString("producto"));
-                        precio_et.setText(jsonObject.getString("precio"));
-                        fab_et.setText(jsonObject.getString("fabricante"));
+                        job = response.getJSONObject(i);
+                        codigo_et.setText(job.getString("codigo"));
+                        producto_et.setText(job.getString("producto"));
+                        fab_et.setText(job.getString("fabricante"));
+                        precio_et.setText(job.getString("precio"));
                     } catch (JSONException e) {
-                        Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
                     }
                 }
+
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Error de conexión", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
             }
         });
         requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(jsonArrayRequest);
+        requestQueue.add(jar);
     }
 }
