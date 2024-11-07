@@ -1,16 +1,32 @@
 package com.dam.productosvolley;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,5 +50,61 @@ public class MainActivity extends AppCompatActivity {
         precio_et = findViewById(R.id.precio_et);
         fab_et = findViewById(R.id.fab_et);
 
+    }
+
+    public void insertarProducto(View view) {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://10.0.2.2/registrar_producto/insertar_producto.php", new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(getApplicationContext(), "Operación exitosa", Toast.LENGTH_SHORT).show();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> parametros = new HashMap<String, String>();
+                //Estas son las $variables del microservicio
+                parametros.put("codigo", codigo_et.getText().toString());
+                parametros.put("producto", producto_et.getText().toString());
+                parametros.put("precio", precio_et.getText().toString());
+                parametros.put("fabricante", fab_et.getText().toString());
+                return parametros;
+            }
+        };
+
+        requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+
+    }
+
+    public void buscarProducto(View view) {
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest("http://10.0.2.2/registrar_producto/buscar_producto.php?codigo=" + codigo_et.getText().toString(), new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                JSONObject jsonObject = null;
+                for (int i = 0; i < response.length(); i++) {
+                    try {
+                        jsonObject = response.getJSONObject(i);
+                        codigo_et.setText(jsonObject.getString("codigo"));
+                        producto_et.setText(jsonObject.getString("producto"));
+                        precio_et.setText(jsonObject.getString("precio"));
+                        fab_et.setText(jsonObject.getString("fabricante"));
+                    } catch (JSONException e) {
+                        Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), "Error de conexión", Toast.LENGTH_SHORT).show();
+            }
+        });
+        requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(jsonArrayRequest);
     }
 }
