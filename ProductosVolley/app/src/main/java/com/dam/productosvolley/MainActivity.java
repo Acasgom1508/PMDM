@@ -53,35 +53,56 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void insertarProducto(View view) {
+        String codigo = codigo_et.getText().toString().trim();
+        String producto = producto_et.getText().toString().trim();
+        String precio = precio_et.getText().toString().trim();
+        String fabricante = fab_et.getText().toString().trim();
+
+        if (codigo.isEmpty() || producto.isEmpty() || precio.isEmpty() || fabricante.isEmpty()) {
+            Toast.makeText(getApplicationContext(), "Debe rellenar todos los campos", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://10.0.2.2/registrar_producto/insertar_producto.php", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(getApplicationContext(), "Operación exitosa", Toast.LENGTH_SHORT).show();
+                // Limpiamos los campos después de insertar
+                codigo_et.setText("");
+                producto_et.setText("");
+                precio_et.setText("");
+                fab_et.setText("");
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Error: " + error.toString(), Toast.LENGTH_SHORT).show();
             }
         }) {
+            @Nullable
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> parametros = new HashMap<String, String>();
-                //Estas son las $variables del microservicio
-                parametros.put("codigo", codigo_et.getText().toString());
-                parametros.put("producto", producto_et.getText().toString());
-                parametros.put("precio", precio_et.getText().toString());
-                parametros.put("fabricante", fab_et.getText().toString());
+                Map<String, String> parametros = new HashMap<>();
+                parametros.put("codigo", codigo);
+                parametros.put("producto", producto);
+                parametros.put("precio", precio);
+                parametros.put("fabricante", fabricante);
                 return parametros;
             }
         };
 
         requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
-
     }
 
+
     public void buscarProducto(View v) {
+
+        if (codigo_et.getText().toString().isEmpty()) {
+            Toast.makeText(getApplicationContext(), "Debe insertar un código", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         JsonArrayRequest jar = new JsonArrayRequest("http://10.0.2.2/registrar_producto/buscar_producto.php?codigo=" + codigo_et.getText().toString(), new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
@@ -110,10 +131,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void eliminarProducto(View view) {
+
+        if (codigo_et.getText().toString().isEmpty()) {
+            Toast.makeText(getApplicationContext(), "Debe insertar un código", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://10.0.2.2/registrar_producto/eliminar_producto.php?codigo=" + codigo_et.getText().toString(), new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(getApplicationContext(), "Operación exitosa", Toast.LENGTH_SHORT).show();
+                codigo_et.setText("");
+                producto_et.setText("");
+                precio_et.setText("");
+                fab_et.setText("");
             }
         }, new Response.ErrorListener() {
             @Override
@@ -139,10 +170,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void editarProducto(View view) {
+
+        if (codigo_et.getText().toString().isEmpty()) {
+            Toast.makeText(getApplicationContext(), "Debe insertar un código", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST, "http://10.0.2.2/registrar_producto/editar_producto.php?codigo=" + codigo_et.getText().toString() + "?producto=" + producto_et.getText().toString() + "?precio=" + precio_et.getText().toString() + "?fabricante=" + fab_et.getText().toString(), new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(getApplicationContext(), "Operación exitosa", Toast.LENGTH_SHORT).show();
+                codigo_et.setText("");
+                producto_et.setText("");
+                precio_et.setText("");
+                fab_et.setText("");
             }
         }, new Response.ErrorListener() {
             @Override
@@ -150,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), error.toString(), Toast.LENGTH_SHORT).show();
             }
         }) {
+            @Nullable
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> parametros = new HashMap<String, String>();
