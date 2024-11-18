@@ -1,5 +1,6 @@
 package com.dam.productosvolley;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -207,5 +208,10 @@ public class MainActivity extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
 
+    }
+
+    public void verProductos(View view) {
+        Intent irLista = new Intent(this, ListaProductos.class);
+        startActivity(irLista);
     }
 }
