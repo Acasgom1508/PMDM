@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Registro</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="ingresar">INGRESAR</string>
+    <string name="correo_electr_nico">Correo Electrónico</string>
+</resources>
