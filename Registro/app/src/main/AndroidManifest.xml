@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Registro"
         tools:targetApi="31">
         <activity
+            android:name=".Multilenguaje"
+            android:exported="false" />
+        <activity
+            android:name=".Sonidos"
+            android:exported="false" />
+        <activity
             android:name=".pruebaScroll"
             android:exported="false" />
         <activity

@@ -1,5 +1,8 @@
 package com.dam.registro;
 
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 
@@ -21,9 +24,20 @@ public class pruebaScroll extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setLogo(R.mipmap.logo_app);
+            getSupportActionBar().setDisplayUseLogoEnabled(true);
+            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#388E3C")));
+        }
     }
 
     public void irAtras(View view) {
         finish();
+    }
+
+    public void irSonidos(View view) {
+        Intent intent = new Intent(this, Sonidos.class);
+        startActivity(intent);
     }
 }
