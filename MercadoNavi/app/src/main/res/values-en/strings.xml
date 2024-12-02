@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Markets</string>
+    <string name="item1_menu_desplegable">Add market</string>
+    <string name="texto_inicio">Here you can manage all the Sevillas markets information</string>
+    <string name="id">Id</string>
+    <string name="nombre">Name</string>
+    <string name="ubi">Ubication</string>
+    <string name="fecha_ini">Start date</string>
+    <string name="fecha_fin">End date</string>
+    <string name="boton_crear">Add</string>
+    <string name="boton_volver">Go back</string>
+</resources>
